@@ -80,7 +80,7 @@ public class MainActivity extends ActionBarActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
                 String itemSelectedInSpinner = parent.getItemAtPosition(pos).toString();
 
-                checkIfConvertingfromTsp(itemSelectedInSpinner);
+                checkIfConvertingFromTsp(itemSelectedInSpinner);
             }
 
             @Override
@@ -92,6 +92,111 @@ public class MainActivity extends ActionBarActivity {
         });
 
     }
+
+    public void checkIfConvertingFromTsp(String currentUnit){
+
+        if(currentUnit.equals("teaspoon")){
+
+            updateUnitTypesUsingTsp(Quantity.Unit.tsp);
+
+        } else {
+
+            if(currentUnit.equals("tablespoon")){
+
+                updateunitTypesUsingOther(Quantity.Unit.tbs);
+
+            } else if(currentUnit.equals("cup")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.cup);
+
+            } else if(currentUnit.equals("ounce")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.oz);
+
+            } else if(currentUnit.equals("pint")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.pint);
+
+            } else if(currentUnit.equals("quart")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.quart);
+
+            } else if(currentUnit.equals("gallon")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.gallon);
+
+            } else if(currentUnit.equals("pound")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.pound);
+
+            } else if(currentUnit.equals("milliliter")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.ml);
+
+            } else if(currentUnit.equals("kilogram")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.kg);
+
+            } else if(currentUnit.equals("liter")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.liter);
+
+            } else if(currentUnit.equals("milligram")) {
+
+                updateunitTypesUsingOther(Quantity.Unit.mg);
+        }
+
+    }
+
+    public void updateUnitTypesUsingTsp(Quantity.Unit currentUnit){
+
+    double doubleToConvert =
+            Double.parseDouble(amountTextView.getText().toString());
+
+        String teaspoonValueAndUnit = doubleToConvert + " tsp";
+
+        teaspoonTextView.setText(teaspoonValueAndUnit);
+
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.tbs, tablespoonTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.cup, cupTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.oz, ounceTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.pint, pintTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.quart, quartTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.gallon, gallonTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.pound, poundTextVew);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.ml, milliliterTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.liter, literTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.mg, milligramTextView);
+        updateUnitTextFieldUsingTsp(doubleToConvert, Quantity.Unit.kg, kilogramTextView);
+
+    }
+
+    public void updateUnitTextFieldUsingTsp(double doubleToConvert,Quantity.Unit unitConvertingTo,TextView theTextView){
+
+        Quantity unitQuantity = new Quantity(doubleToConvert, Quantity.Unit.tsp);
+        String tempUnit = unitQuantity.toString();
+
+        theTextView.setText(tempUnit);
+
+    }
+
+    public void updateunitTypesUsingOther(Quantity.Unit currentUnit){
+
+        double doubleToConvert = Double.parseDouble(amountTextView.getText().toString());
+
+        Quantity currentQuantitySelected = new Quantity(doubleToConvert, currentUnit);
+
+        String valueInTeaspoons = currentQuantitySelected.to(Quantity.Unit.tsp).toString();
+
+        teaspoonTextView.setText(valueInTeaspoons);
+
+        updateUnitTextFieldUsingTsp(doubleToConvert,currentUnit, Quantity.Unit.tbs, tablespoonTextView);
+
+    }
+}
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
