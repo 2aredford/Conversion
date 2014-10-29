@@ -59,13 +59,13 @@
 
         <TextView
             android:id="@+id/cup_text_view"
-            android:text=".0208 cup"
+            android:text="@string/default_cup_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="left|top"/>
 
         <TextView
             android:id="@+id/tbs_text_view"
-            android:text=".3333 tbs"
+            android:text="@string/default_tablespoon_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,13 +75,13 @@
 
         <TextView
             android:id="@+id/oz_text_view"
-            android:text=".1666 oz"
+            android:text="@string/default_oz_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="left|top"/>
 
         <TextView
             android:id="@+id/kg_text_view"
-            android:text=".0057 kg"
+            android:text="@string/default_kilogram_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,13 +91,13 @@
 
         <TextView
             android:id="@+id/quart_text_view"
-            android:text=".0052 quart"
+            android:text="@string/default_quart_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="left|top"/>
 
         <TextView
             android:id="@+id/gallon_text_view"
-            android:text=".0013 gallon"
+            android:text="@string/default_gallon_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,13 +107,13 @@
 
         <TextView
             android:id="@+id/pound_text_view"
-            android:text=".0125 pound"
+            android:text="@string/default_pound_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="left|top"/>
 
         <TextView
             android:id="@+id/ml_text_view"
-            android:text="4.9289 ml"
+            android:text="@string/default_milliliter_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,13 +123,13 @@
 
         <TextView
             android:id="@+id/liter_text_view"
-            android:text=".0049 liter"
+            android:text="@string/default_liter_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="left|top"/>
 
         <TextView
             android:id="@+id/mg_text_view"
-            android:text="5687.5000 mg"
+            android:text="@string/default_milligram_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
 
         <TextView
             android:id="@+id/pint_text_view"
-            android:text=".0104 pint"
+            android:text="@string/default_pint_value"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="left|top"/>
         </GridLayout>
